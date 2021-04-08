@@ -51,7 +51,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/degaslte/include
 
 # Kernel
-TARGET_KERNEL_CONFIG := cm_degaslte_00_defconfig
+TARGET_KERNEL_CONFIG := lineage_degaslte_00_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/degaslte
 
 # GUI (Avoid Crash after entering sleep)
