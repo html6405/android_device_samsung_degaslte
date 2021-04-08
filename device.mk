@@ -39,12 +39,6 @@ PRODUCT_PACKAGES += \
     init.universal3470.usb.rc \
     init.wifi.rc \
     ueventd.universal3470.rc
-    
-#ADB
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.debuggable=1
 
 # Audio
 PRODUCT_COPY_FILES += \
