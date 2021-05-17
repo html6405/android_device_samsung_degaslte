@@ -11,9 +11,76 @@ rild.libargs=-d /dev/umts_ipc0
 ro.ril.hsxpa=1
 ro.ril.gprsclass=10
 ro.ril.telephony.mqanelements=6
+ro.telephony.default_network=9
+telephony.lteOnCdmaDevice=0
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.add_power_save=1
+
+# audio
+ro.config.vc_call_vol_steps=7
+ro.config.media_vol_steps=25
 
 # Uncomment the following line to enable Bluetooth A2DP sink
 #persist.service.bt.a2dp.sink=true
 
+# NFC
 ro.nfc.sec_hal=true
 
+# Camera
+camera2.portability.force_api=1
+
+# Vendor security patch level
+ro.lineage.build.vendor_security_patch=2017-08-01
+
+# this affects lock screen ColorFader and ensures release of /dev/pvrsrvkm GPU ressources
+ro.egl.destroy_after_detach=true
+
+# Memory optimizations
+ro.vendor.qti.am.reschedule_service=true
+ro.vendor.qti.sys.fw.bservice_enable=true
+
+#adb
+ro.adb.secure=0
+ro.secure=0
+ro.debuggable=1
+sys.usb.config=adb
+persist.sys.adb.shell=/system/xbin/bash
+persist.sys.usb.config=adb
+persist.service.adb.enable=1
+persist.service.debuggable=1
+sys.usb.ffs.aio_compat=1
+lineage.service.adb.root=1
+
+# Added from stock
+
+# Dalvik
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapsize=256m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=2m
+dalvik.vm.heapmaxfree=8m
+
+
+# Added props
+# Disable fast dormancy
+ro.fast.dormancy=1
+ro.config.hw_fast_dormancy=1
+ro.ril.fast.dormancy.rule=1
+
+# Increase Wi-fi scanning interval
+wifi.supplicant_scan_interval=180
+
+
+# Disable HW overlays
+debug.sf.disable_hwcomposer=true
+
+# Legacy graphics optimizations
+debug.hwui.use_buffer_age=false
+debug.sf.enable_gl_backpressure=1
+debug.sf.latch_unsignaled=1
+
+# Use legacy codecs (still needed for P?)
+debug.stagefright.ccodec=0
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
