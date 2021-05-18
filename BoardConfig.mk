@@ -17,6 +17,8 @@
 # inherit from common smdk3470
 -include device/samsung/smdk3470-common/BoardConfigCommon.mk
 
+DEVICE_PATH := device/samsung/degaslte
+
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
   ifeq ($(TARGET_BUILD_VARIANT),userdebug)
@@ -25,6 +27,9 @@ ifeq ($(HOST_OS),linux)
    endif
   endif
 endif
+
+# Shipping API level (for CTS backward compatibility)
+PRODUCT_SHIPPING_API_LEVEL := 19
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := degasltexx,degasltezt,degaslte
@@ -52,13 +57,13 @@ TARGET_SPECIFIC_HEADER_PATH += device/samsung/degaslte/include
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_degaslte_00_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/degaslte
+TARGET_KERNEL_SOURCE := kernel/samsung/kminilte
 
 # GUI (Avoid Crash after entering sleep)
 BOARD_EGL_NEEDS_HANDLE_VALUE := true
 
-# CMHW
-BOARD_HARDWARE_CLASS := device/samsung/degaslte/cmhw
+# Lineagehw
+BOARD_HARDWARE_CLASS := device/samsung/degaslte/lineagehw
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/degaslte/bluetooth
@@ -91,3 +96,7 @@ RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS := \
+	$(DEVICE_PATH)/sepolicy
