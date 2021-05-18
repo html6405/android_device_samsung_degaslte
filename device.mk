@@ -48,6 +48,10 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += \
 #    libion_exynos
 
+# Camera
+PRODUCT_PACKAGES += \
+	SimpleCamera
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
