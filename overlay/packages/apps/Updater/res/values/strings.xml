@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2013 The CyanogenMod Project
+<!--
+     Copyright (C) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -12,14 +13,12 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
- -->
-<resources>
-    <string-array name="backlight_timeout_entries">
-        <item>Implicit(1.6 secunde)</item>
-        <item>0.5 secunde</item>
-        <item>1 secunde</item>
-        <item>2 secunde</item>
-        <item>5 secunde</item>
-        <item>Niciodata</item>
-    </string-array>
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="updater_server_url" translatable="false">http://html6405.ddns.net/{device}/html6405/LOS16.xml</string>
+
+    <string name="menu_changelog_url" translatable="false">https://forum.xda-developers.com/t/rom-lineageos-16-0-android-9-for-sm-t235-sm-t235y-degaslte.4278731/post-85037305</string>
+
 </resources>
+
