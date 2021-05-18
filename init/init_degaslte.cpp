@@ -53,16 +53,20 @@ void vendor_load_properties()
 
     if (bootloader.find("T235Y") == 0) {
         /* degasltezt */
-	property_set("ro.build.fingerprint", "samsung/degasltezt/degaslte:4.4.2/KOT49H/T235YZTU1AOD1:user/release-keys");
-	property_set("ro.build.description", "degasltezt-user 4.4.2 KOT49H T235YZTU1AOD1 release-keys");
-        property_set("ro.product.model", "SM-T235Y");
-        property_set("ro.product.device", "degasltezt");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-T235Y");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "degaslte");
+        property_override_dual("ro.product.device", "ro.vendor.product.name", "degasltezt");
+        property_override_dual("ro.build.description", "ro.vendor.build.description", "degasltezt-user 4.4.2 KOT49H T235YZTU1AOD1 release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/degasltezt/degaslte:4.4.2/KOT49H/T235YZTU1AOD1:user/release-keys");
+        property_override("ro.build.product", "degaslte");
     } else if (bootloader.find("T235") == 0) {
         /* degasltexx */
-        property_set("ro.build.fingerprint", "samsung/degasltexx/degaslte:4.4.2/KOT49H/T235XXU1AOD1:user/release-keys");
-        property_set("ro.build.description", "degasltexx-user 4.4.2 KOT49H T235XXU1AOD1 release-keys");
-        property_set("ro.product.model", "SM-T235");
-        property_set("ro.product.device", "degasltexx");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-T235");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "degaslte");
+        property_override_dual("ro.product.device", "ro.vendor.product.name", "degasltexx");
+        property_override_dual("ro.build.description", "ro.vendor.build.description", "degasltexx-user 5.1.1 LMY47X T235XXS1BRH3 release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/degasltexx/degaslte:5.1.1/LMY47X/T235XXS1BRH3:user/release-keys");
+        property_override("ro.build.product", "degaslte");
      }
 
     const std::string device = GetProperty("ro.product.device", "");
