@@ -98,6 +98,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     sensors.universal3470
 
+# Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # Radio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/sbin/cbd:root/sbin/cbd
