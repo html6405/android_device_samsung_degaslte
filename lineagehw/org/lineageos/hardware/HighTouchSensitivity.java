@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2014 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.hardware;
+package org.lineageos.hardware;
 
-import org.cyanogenmod.hardware.util.FileUtils;
+import org.lineageos.internal.util.FileUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,28 +26,28 @@ import java.io.IOException;
 import android.util.Log;
 
 /**
- * Touchscreen Hovering
+ * Glove mode / high touch sensitivity
  */
-public class TouchscreenHovering {
+public class HighTouchSensitivity {
 
-    private static String TAG = "TouchscreenHovering";
+    private static String TAG = "HighTouchSensitivity";
 
     private static String COMMAND_PATH = "/sys/class/sec/tsp/cmd";
     /* FIXME: cyttsp5 driver does not have cmd_list entry */
     //private static String COMMAND_LIST_PATH = "/sys/class/sec/tsp/cmd_list";
     private static String COMMAND_RESULT_PATH = "/sys/class/sec/tsp/cmd_result";
-    private static String HOVER_MODE = "hover_enable";
-    private static String HOVER_MODE_ENABLE = "hover_enable,1";
-    private static String HOVER_MODE_DISABLE = "hover_enable,0";
+    private static String GLOVE_MODE = "glove_mode";
+    private static String GLOVE_MODE_ENABLE = "glove_mode,1";
+    private static String GLOVE_MODE_DISABLE = "glove_mode,0";
     private static String STATUS_OK = ":OK";
 
     /**
-     * Whether device supports touchscreen hovering.
+     * Whether device supports high touch sensitivity.
      *
      * @return boolean Supported devices must return always true
      */
     public static boolean isSupported() {
-        /* 
+        /*
         File f = new File(COMMAND_PATH);
         if (f.exists()) {
             BufferedReader reader = null;
@@ -55,7 +55,7 @@ public class TouchscreenHovering {
                 String currentLine;
                 reader = new BufferedReader(new FileReader(COMMAND_LIST_PATH));
                 while ((currentLine = reader.readLine()) != null) {
-                    if (HOVER_MODE.equals(currentLine))
+                    if (GLOVE_MODE.equals(currentLine))
                         return true;
                 }
             } catch (IOException e) {
@@ -75,23 +75,23 @@ public class TouchscreenHovering {
         return true;
     }
 
-    /** This method returns the current activation status of touchscreen hovering
+    /** This method returns the current activation status of high touch sensitivity
      *
-     * @return boolean Must be false if touchscreen hovering is not supported or not activated,
+     * @return boolean Must be false if high touch sensitivity is not supported or not activated,
      * or the operation failed while reading the status; true in any other case.
      */
     public static boolean isEnabled() {
-        return FileUtils.readOneLine(COMMAND_RESULT_PATH).equals(HOVER_MODE_ENABLE + STATUS_OK);
+        return FileUtils.readOneLine(COMMAND_RESULT_PATH).equals(GLOVE_MODE_ENABLE + STATUS_OK);
     }
 
     /**
-     * This method allows to setup touchscreen hovering status.
+     * This method allows to setup high touch sensitivity status.
      *
-     * @param status The new touchscreen hovering status
-     * @return boolean Must be false if touchscreen hovering is not supported or the operation
+     * @param status The new high touch sensitivity status
+     * @return boolean Must be false if high touch sensitivity is not supported or the operation
      * failed; true in any other case.
      */
     public static boolean setEnabled(boolean status) {
-        return FileUtils.writeLine(COMMAND_PATH, status ? HOVER_MODE_ENABLE : HOVER_MODE_DISABLE);
+        return FileUtils.writeLine(COMMAND_PATH, status ? GLOVE_MODE_ENABLE : GLOVE_MODE_DISABLE);
     }
 }
