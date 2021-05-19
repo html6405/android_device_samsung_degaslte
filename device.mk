@@ -85,6 +85,10 @@ PRODUCT_COPY_FILES += \
 # NFC
 # No NFC
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
+
 # Radio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/sbin/cbd:root/sbin/cbd
