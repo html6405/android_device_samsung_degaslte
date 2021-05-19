@@ -56,6 +56,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	SimpleCamera
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.isUsbOtgEnabled=true
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
