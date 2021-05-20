@@ -106,6 +106,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/sbin/cbd:root/sbin/cbd
 
+# SSWAP
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/sbin/sswap:root/sbin/sswap
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
