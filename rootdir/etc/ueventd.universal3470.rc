@@ -3,7 +3,10 @@
 /dev/ump                  0666   system     graphics
 /dev/exynos-mem           0660   system     graphics
 
-/dev/video6               0660   media      media
+# mfc
+#s5p-mfc-dec
+/dev/video6               0660   mediacodec mediadrm
+
 /dev/video7               0660   media      media
 /dev/video8               0660   media      media
 /dev/video9               0660   media      media
