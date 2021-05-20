@@ -39,7 +39,7 @@
 /dev/video20              0660   system     system
 
 /dev/video23              0660   media      graphics
-/dev/video25              0660   media      graphics
+/dev/video25              0666   media      graphics
 /dev/video27              0660   media      graphics
 /dev/video29              0660   media      graphics
 
