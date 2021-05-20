@@ -35,8 +35,8 @@
 /dev/video149             0660   media      media
 
 #JPEG
-/dev/video11              0660   media      media
-/dev/video12              0660   media      media
+/dev/video11              0660   media      camera
+/dev/video12              0660   media      camera
 
 /dev/video16              0660   system     system
 /dev/video20              0660   system     system
