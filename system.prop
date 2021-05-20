@@ -39,18 +39,6 @@ ro.egl.destroy_after_detach=true
 ro.vendor.qti.am.reschedule_service=true
 ro.vendor.qti.sys.fw.bservice_enable=true
 
-#adb
-ro.adb.secure=0
-ro.secure=0
-ro.debuggable=1
-sys.usb.config=adb
-persist.sys.adb.shell=/system/xbin/bash
-persist.sys.usb.config=adb
-persist.service.adb.enable=1
-persist.service.debuggable=1
-sys.usb.ffs.aio_compat=1
-lineage.service.adb.root=1
-
 # Added from stock
 
 # Dalvik
