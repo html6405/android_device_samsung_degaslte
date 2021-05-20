@@ -43,8 +43,8 @@
 /dev/video27              0660   media      graphics
 /dev/video29              0660   media      graphics
 
-/dev/video36              0660   media      media
-/dev/video37              0660   media      media
+/dev/video36              0666   media      media
+/dev/video37              0666   media      media
 
 /dev/fimg2d               0666   system     graphics
 /dev/i2c-2                0660   system     system
