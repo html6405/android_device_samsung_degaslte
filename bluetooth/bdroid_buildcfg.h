@@ -17,8 +17,13 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-// Commented out for variant support 
+// Commented out for variant support
 // when null the product model is used
 // #define BTM_DEF_LOCAL_NAME   "SM-T235"
+#define BTM_WBS_INCLUDED TRUE /* Enable WBS */
+#define BTIF_HF_WBS_PREFERRED FALSE /* Enable WBS by default */
+#define BTSNOOP_MEM FALSE /* Disable BTSnoop memory logging */
+#define SC_MODE_INCLUDED FALSE /* Disable 4.1/4.2 secure connections feature */
 
 #endif
+
