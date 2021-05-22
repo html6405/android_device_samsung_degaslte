@@ -535,7 +535,7 @@ service cpboot-daemon /sbin/cbd -d -t ss222 -b m -m m
     class main
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw log shell
-#    seclabel u:r:cpboot-daemon:s0
+    seclabel u:r:cpboot-daemon:s0
 
 on property:persist.sys.cpboot=disable
     stop ril-daemon
