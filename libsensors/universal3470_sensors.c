@@ -1,6 +1,7 @@
 /*
- * Copyright (C) 2013 Paul Kocialkowski <contact@paulk.fr>
+ * Copyright (C) 2021 Peter Schelchshorn (html6405) <peter.schelchshorn@gmail.com>
  *
+ * This program is based on the work of Paul Kocialkowski <contact@paulk.fr>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
