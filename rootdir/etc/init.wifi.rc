@@ -36,7 +36,7 @@ on boot
 # Run deferred initcalls of builtin kernel modules (bcmdhd)
 service wifiloader /system/bin/wifiloader
     class main
-#    seclabel u:r:wifiloader:s0
+    seclabel u:r:wifiloader:s0
     oneshot
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
@@ -52,7 +52,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 
 service macloader /vendor/bin/macloader
     class late_start
-#    seclabel u:r:macloader:s0
+    seclabel u:r:macloader:s0
     user system
     group system wifi
     oneshot
