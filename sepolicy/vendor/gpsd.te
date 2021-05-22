@@ -1,0 +1,40 @@
+type gpsd, domain;
+permissive gpsd;
+init_daemon_domain(gpsd);
+
+#type_transition gpsd system_data_file:file gps_data_file;
+
+allow gpsd rild:unix_stream_socket connectto;
+allow gpsd sysfs_wake_lock:file { read write open };
+allow gpsd gps_device:chr_file { read write ioctl open };
+allow gpsd servicemanager:binder call;
+allow gpsd cache_file:dir { write add_name };
+allow gpsd cache_file:fifo_file { unlink open create read getattr };
+allow gpsd cache_file:dir remove_name;
+allow gpsd system_server:binder call;
+# load SHIM libraries
+allow init gpsd:process noatsecure;
+allow gpsd dnsproxyd_socket:sock_file write;
+allow gpsd fwmarkd_socket:sock_file write;
+allow gpsd netd:unix_stream_socket connectto;
+allow gpsd self:tcp_socket create;
+allow gpsd sensorservice_service:service_manager find;
+allow gpsd sysfs:file { open read write };
+allow gpsd sysfs_cpuinfo:dir search;
+allow gpsd sysfs_cpuinfo:file { getattr open read };
+allow gpsd system_data_file:fifo_file write;
+allow gpsd system_server:unix_stream_socket { read write };
+allow gpsd port:tcp_socket { name_connect name_bind };
+allow gpsd self:tcp_socket { connect getopt };
+allow gpsd system_data_file:fifo_file { open read };
+allow gpsd system_data_file:file { lock open };
+allow gpsd node:tcp_socket node_bind;
+allow gpsd self:tcp_socket { bind read write };
+allow gpsd gps_device:chr_file getattr;
+allow gpsd gps_data_file:fifo_file { open read write };
+allow gpsd gps_data_file:file { lock open read write getattr };
+allow gpsd system_server:fd use;
+allow gpsd system_data_file:dir { add_name write };
+allow gpsd system_data_file:fifo_file create;
+allow gpsd gps_data_file:fifo_file { getattr unlink };
+allow gpsd system_data_file:dir remove_name;

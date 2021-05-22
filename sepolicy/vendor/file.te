@@ -8,16 +8,29 @@ type cbd_log_data, file_type;
 type cpk_efs_file, file_type;
 type drm_efs_file, file_type;
 type factorymode_factoryapp_efs_file, file_type;
+
 type imei_efs_file, file_type;
 type prov_efs_file, file_type;
 type radio_factoryapp_efs_file, file_type;
 type sensor_efs_file, file_type;
 type wifi_efs_file, file_type;
+type firmware_mfc, file_type;
+type efs_device_file, file_type;
+type wifi_socket, file_type, data_file_type;
+type gps_data_file, file_type, data_file_type, core_data_file_type;
 
 ### sysfs types
 type sysfs_multipdp_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_usb_power_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_otg_writable, fs_type, sysfs_type;
 type sysfs_graphics, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_cpufreq, fs_type, sysfs_type;
+type sysfs_lmkd, fs_type, sysfs_type;
+type sysfs_rmnet, fs_type, sysfs_type;
+type wifi_firmware_path, fs_type, sysfs_type;
+type sysfs_sensors, fs_type, sysfs_type;
+
+type gralloc_file, file_type, vendor_file_type;
+type hwc_file, file_type, vendor_file_type;
 
 allow sysfs_type tmpfs:filesystem associate;

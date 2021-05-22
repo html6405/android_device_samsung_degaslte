@@ -1,9 +1,11 @@
+
+# GFX
+/dev/mali                                                        u:object_r:gpu_device:s0
+
 ##########################
 # Devices
 #
 
-/dev/akm8963                u:object_r:sensors_device:s0
-/dev/alps_io                u:object_r:input_device:s0
 /dev/ehci_power             u:object_r:mif_device:s0
 /dev/fimg2d                 u:object_r:video_device:s0
 /dev/mali[0-9]*             u:object_r:gpu_device:s0
@@ -11,9 +13,7 @@
 /dev/mobicore               u:object_r:tee_device:s0
 /dev/mobicore-user          u:object_r:tee_device:s0
 /dev/mtp_usb*               u:object_r:mtp_device:s0
-/dev/sec-nfc                u:object_r:nfc_device:s0
 /dev/s5p-smem               u:object_r:secmem_device:s0
-/dev/ttySAC0                u:object_r:hci_attach_dev:s0
 /dev/umts.*                 u:object_r:mif_device:s0
 /dev/v4l-subdev[0-9]*       u:object_r:video_device:s0
 
@@ -31,7 +31,6 @@
 /efs/Battery(/.*)?           u:object_r:battery_efs_type:s0
 /efs/calibration_data        u:object_r:sensor_efs_file:s0
 /efs/grip_cal_data           u:object_r:sensor_efs_file:s0
-/efs/gyro_cal_data           u:object_r:sensor_efs_file:s0
 /efs/h2k\.dat                u:object_r:cpk_efs_file:s0
 /efs/redata\.bin             u:object_r:cpk_efs_file:s0
 /efs/imei(/.*)?              u:object_r:imei_efs_file:s0
@@ -49,8 +48,8 @@
 #
 
 /data/camera(/.*)?           u:object_r:camera_data_file:s0
-/data/nfc(/.*)?              u:object_r:nfc_data_file:s0
 /data/.wifiver.info          u:object_r:wifi_data_file:s0
+/data/.cid.info              u:object_r:wifi_data_file:s0
 /data/misc/radio(/.*)?       u:object_r:radio_data_file:s0
 /efs/wifi/.mac.info          u:object_r:wifi_data_file:s0
 
@@ -61,7 +60,6 @@
 /sys/class/graphics/fb[0-9](/.*)?                            -- u:object_r:sysfs_graphics:s0
 /sys/devices/platform/bcm4334_bluetooth/rfkill/rfkill0/state -- u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/platform/bcm4334_bluetooth/rfkill/rfkill0/type  -- u:object_r:sysfs_bluetooth_writable:s0
-/sys/devices/platform/s5p-ehci/ehci_power                       u:object_r:sysfs_usb_power_writable:s0
 /sys/devices/virtual/misc/multipdp(/.*)                         u:object_r:sysfs_multipdp_writable:s0
 /sys/devices/virtual/sec/switch/otg_cable_type                  u:object_r:sysfs_otg_writable:s0
 
@@ -70,3 +68,80 @@
 #
 /system/bin/mcDriverDaemon -- u:object_r:tee_exec:s0
 
+# CPU
+/sys/power/cpufreq_max_limit                                     u:object_r:sysfs_cpufreq:s0
+/sys/power/cpufreq_min_limit                                     u:object_r:sysfs_cpufreq:s0
+
+# lmkd
+/sys/module/lowmemorykiller(/.*)?                                u:object_r:sysfs_lmkd:s0
+
+# swap
+/sys/devices/virtual/block/vnswap0(/.*)?                           u:object_r:sysfs_zram:s0
+
+# USB
+/sys/devices/virtual/android_usb/android0(/.*)?                  u:object_r:sysfs_usb:s0
+/sys/devices/virtual/net/rmnet0(/.*)?                            u:object_r:sysfs_rmnet:s0
+
+# Vendor
+/(vendor|system/vendor)/lib/hw/gralloc.exynos3.so     u:object_r:gralloc_file:s0
+/(vendor|system/vendor)/lib/hw/hwcomposer.exynos3.so     u:object_r:hwc_file:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.samsung          u:object_r:hal_lineage_touch_default_exec:s0
+
+# Firmware
+/system/vendor/firmware(/.*)?					 u:object_r:firmware_exynos:s0
+/system/vendor/firwmare/mfc_fw.bin				 u:object_r:firmware_mfc:s0
+
+# Executables
+/sbin/cbd                                                        u:object_r:cpboot-daemon_exec:s0
+/system/vendor/bin/macloader                                     u:object_r:macloader_exec:s0
+/system/bin/wifiloader                                           u:object_r:wifiloader_exec:s0
+/system/vendor/bin/gpsd                                          u:object_r:gpsd_exec:s0
+/vendor/bin/hw/wpa_supplicant                                    u:object_r:hal_wifi_default_exec:s0
+
+# WiFi
+/dev/rfkill                                                      u:object_r:rfkill_device:s0
+/sys/module/dhd/parameters/firmware_path                         u:object_r:wifi_firmware_path:s0
+/data/vendor/wifi/wpa/sockets                                    u:object_r:wifi_socket:s0
+
+# Keys
+/sys/devices/virtual/sec/sec_key/wakeup_keys                     u:object_r:sysfs_sensors:s0
+
+# GPS
+/dev/ttySAC1                                                     u:object_r:gps_device:s0
+
+# Bluetooth
+/dev/ttySAC0                                                     u:object_r:hci_attach_dev:s0
+/efs/bluetooth/bt_addr                                           u:object_r:bluetooth_data_file:s0
+/sys/devices/platform/bcm4330_bluetooth/rfkill/rfkill0/state     u:object_r:sysfs_bluetooth_writable:s0
+
+# RIL
+/dev/link_pm                                                     u:object_r:radio_device:s0
+/dev/umts_boot0                                                  u:object_r:radio_device:s0
+/dev/umts_csd                                                    u:object_r:radio_device:s0
+/dev/umts_dm0                                                    u:object_r:radio_device:s0
+/dev/umts_loopback_ap2cp                                         u:object_r:radio_device:s0
+/dev/umts_loopback_cp2ap                                         u:object_r:radio_device:s0
+/dev/umts_ramdump0                                               u:object_r:radio_device:s0
+/dev/umts_rfs0                                                   u:object_r:radio_device:s0
+/dev/umts_router                                                 u:object_r:radio_device:s0
+/dev/umts_ipc0                                                   u:object_r:radio_device:s0
+/dev/umts_log                                                    u:object_r:radio_device:s0
+/sys/devices/platform/s5p-ehci/ehci_power                        u:object_r:sysfs_usb_power_writable:s0
+/dev/mdm                                                         u:object_r:radio_device:s0
+/dev/hsicctl[0-3]*                                               u:object_r:radio_device:s0
+/dev/ttyUSB0                                                     u:object_r:radio_device:s0
+
+# Block labeling
+/dev/block/mmcblk0(.*)                                           u:object_r:boot_block_device:s0
+/dev/block/mmcblk0p3                                             u:object_r:efs_block_device:s0
+/dev/block/mmcblk0p4                                             u:object_r:efs_boot_dev:s0
+/dev/block/mmcblk0p5                                             u:object_r:efs_boot_dev:s0
+/dev/block/mmcblk0p6                                             u:object_r:efs_boot_dev:s0
+/dev/block/mmcblk0p11                                            u:object_r:misc_block_device:s0
+/dev/block/mmcblk0p13                                            u:object_r:efs_block_device:s0
+/dev/block/mmcblk0p14                                            u:object_r:efs_block_device:s0
+/dev/block/mmcblk0p18                                            u:object_r:system_block_device:s0
+/dev/block/mmcblk0p19                                            u:object_r:cache_block_device:s0
+/dev/block/mmcblk0p21                                            u:object_r:userdata_block_device:s0
+/dev/block/vnswap0                                               u:object_r:swap_block_device:s0
+/efs                                                             u:object_r:efs_device_file:s0
