@@ -1,0 +1,4 @@
+type swap_daemon, domain;
+type swap_daemon_exec, exec_type, file_type;
+init_daemon_domain(swap_daemon);
+permissive swap_daemon;

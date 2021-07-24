@@ -77,6 +77,7 @@
 
 # swap
 /sys/devices/virtual/block/vnswap0(/.*)?                           u:object_r:sysfs_zram:s0
+/sbin/sswap                                                        u:object_r:swap_daemon_exec:s0
 
 # USB
 /sys/devices/virtual/android_usb/android0(/.*)?                  u:object_r:sysfs_usb:s0
@@ -88,8 +89,8 @@
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.samsung          u:object_r:hal_lineage_touch_default_exec:s0
 
 # Firmware
-/system/vendor/firmware(/.*)?					 u:object_r:firmware_exynos:s0
-/system/vendor/firwmare/mfc_fw.bin				 u:object_r:firmware_mfc:s0
+vendor/firmware(/.*)?					 u:object_r:firmware_exynos:s0
+vendor/firwmare/mfc_fw.bin				 u:object_r:firmware_mfc:s0
 
 # Executables
 /sbin/cbd                                                        u:object_r:cpboot-daemon_exec:s0
@@ -97,6 +98,7 @@
 /system/bin/wifiloader                                           u:object_r:wifiloader_exec:s0
 /system/vendor/bin/gpsd                                          u:object_r:gpsd_exec:s0
 /vendor/bin/hw/wpa_supplicant                                    u:object_r:hal_wifi_default_exec:s0
+
 
 # WiFi
 /dev/rfkill                                                      u:object_r:rfkill_device:s0

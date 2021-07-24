@@ -585,6 +585,7 @@ service sswap /sbin/sswap -s -f 1024
     user root
     group root
     oneshot
+    seclabel u:r:swap_daemon:s0
 
 on property:sys.boot_completed=1
     start sswap
