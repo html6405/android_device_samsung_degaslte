@@ -1,0 +1,2 @@
+# allow hal_wifi_supplicant_default debugfs:file write;
+# allow hal_wifi_supplicant_default debugfs:file { open };

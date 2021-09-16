@@ -1,0 +1,2 @@
+allow hwservicemanager sysfs_cpuinfo:dir search;
+allow hwservicemanager sysfs_cpuinfo:file { getattr open read };

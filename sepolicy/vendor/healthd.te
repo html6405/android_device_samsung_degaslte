@@ -1,0 +1,3 @@
+allow healthd sysfs:file read;
+allow healthd sysfs:file open;
+allow healthd sysfs:file getattr;

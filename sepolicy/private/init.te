@@ -1,0 +1,2 @@
+allow init hal_allocator_default:binder call;
+allow init hal_allocator_default:fd use;

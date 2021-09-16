@@ -1,0 +1,8 @@
+type disablehwc, domain;
+type disablehwc_exec, exec_type, file_type;
+
+permissive disablehwc;
+init_daemon_domain(disablehwc);
+
+allow disablehwc sysfs_cpuinfo:dir search;
+allow disablehwc toolbox_exec:file { execute execute_no_trans getattr open read };

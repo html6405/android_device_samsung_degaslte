@@ -1,0 +1,3 @@
+# allow crash_dump debugfs:file { open write };
+allow crash_dump sysfs_cpuinfo:dir search;
+allow crash_dump sysfs_cpuinfo:file { getattr open read };

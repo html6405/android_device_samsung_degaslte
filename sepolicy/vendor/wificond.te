@@ -1,0 +1,1 @@
+# allow wificond debugfs:file { open write };

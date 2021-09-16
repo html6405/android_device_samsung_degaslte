@@ -1,0 +1,2 @@
+allow dex2oat sysfs_cpuinfo:dir search;
+allow dex2oat sysfs_cpuinfo:file { open read };

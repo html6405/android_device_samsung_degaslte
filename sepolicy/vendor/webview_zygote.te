@@ -1,0 +1,3 @@
+# allow webview_zygote debugfs:file { open write };
+allow webview_zygote debugfs:file { getattr };
+

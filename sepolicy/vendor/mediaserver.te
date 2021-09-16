@@ -1,0 +1,4 @@
+allow mediaserver hal_lineage_camera_motor_hwservice:hwservice_manager find;
+# allow mediaserver init:binder call;
+# allow mediaserver init:binder { transfer };
+

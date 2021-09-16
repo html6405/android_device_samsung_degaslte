@@ -1,0 +1,5 @@
+allow zygote sysfs_cpuinfo:dir { open read search };
+allow zygote sysfs_cpuinfo:file { getattr open read };
+allow zygote debugfs:file { getattr };
+# allow zygote debugfs:file { write };
+# allow zygote debugfs:file { open };

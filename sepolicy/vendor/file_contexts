@@ -98,6 +98,7 @@ vendor/firwmare/mfc_fw.bin				 u:object_r:firmware_mfc:s0
 /system/bin/wifiloader                                           u:object_r:wifiloader_exec:s0
 /system/vendor/bin/gpsd                                          u:object_r:gpsd_exec:s0
 /vendor/bin/hw/wpa_supplicant                                    u:object_r:hal_wifi_default_exec:s0
+/system/vendor/bin/disablehwc.sh                                 u:object_r:disablehwc_exec:s0
 
 
 # WiFi

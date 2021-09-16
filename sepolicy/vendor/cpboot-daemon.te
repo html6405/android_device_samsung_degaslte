@@ -3,3 +3,11 @@ type cpboot-daemon_exec, exec_type, file_type;
 init_daemon_domain(cpboot-daemon);
 permissive cpboot-daemon;
 
+allow cpboot-daemon init:unix_stream_socket connectto;
+allow cpboot-daemon property_socket:sock_file write;
+allow cpboot-daemon rootfs:file entrypoint;
+allow cpboot-daemon rootfs:file read;
+allow cpboot-daemon sysfs_cpuinfo:dir search;
+allow cpboot-daemon rootfs:file getattr;
+allow cpboot-daemon tee_device:chr_file { open read write };
+allow cpboot-daemon sysfs_cpuinfo:file { open read };

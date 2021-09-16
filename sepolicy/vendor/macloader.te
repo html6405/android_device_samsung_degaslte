@@ -15,3 +15,8 @@ allow macloader sysfs_cpuinfo:dir search;
 allow macloader sysfs_cpuinfo:file { read getattr open };
 allow macloader wifi_efs_file:dir search;
 allow macloader gpsd_exec:file getattr;
+allow macloader shell_exec:file { execute execute_no_trans open read };
+allow macloader shell_exec:file getattr;
+allow macloader wifi_efs_file:dir { read write };
+allow macloader self:udp_socket create;
+allow macloader wifi_firmware_path:file { open write };

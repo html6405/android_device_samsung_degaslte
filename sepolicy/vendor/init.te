@@ -1,0 +1,22 @@
+allow init hal_camera_hwservice:hwservice_manager { find };
+# allow init hal_camera_hwservice:hwservice_manager add;
+allow init hidl_allocator_hwservice:hwservice_manager find;
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init sysfs:file { setattr };
+allow init sysfs_otg_writable:file setattr;
+allow init sysfs_sensors:file { open setattr write };
+allow init sysfs_usb:file { setattr write };
+allow init tmpfs:lnk_file create;
+#allow init sysfs:file { open read write };
+allow init sysfs_cpufreq:file setattr;
+allow init sysfs_cpuinfo:file { open write };
+allow init sysfs_cpuinfo:lnk_file read;
+
+allow init hal_graphics_allocator_default:fd use;
+allow init hal_graphics_mapper_hwservice:hwservice_manager find;
+allow init hidl_memory_hwservice:hwservice_manager find;
+allow init ion_device:chr_file ioctl;
+allow init kernel:security check_context;
+allow init mediaserver:binder call;
+allow init sysfs_cpuinfo:file setattr;
+allow init video_device:chr_file { ioctl write };

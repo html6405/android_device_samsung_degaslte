@@ -1,0 +1,2 @@
+# allow installd debugfs:file write;
+# allow installd debugfs:file { open };

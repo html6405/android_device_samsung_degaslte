@@ -1,0 +1,6 @@
+allow mediacodec sysfs:file { open read };
+allow mediacodec sysfs_cpuinfo:dir search;
+allow mediacodec sysfs_cpuinfo:file { open read };
+# allow mediacodec debugfs:file { open write };
+allow mediacodec sysfs_cpuinfo:file getattr;
+allow mediacodec sysfs:file getattr;

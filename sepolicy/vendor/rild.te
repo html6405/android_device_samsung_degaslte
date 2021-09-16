@@ -1,0 +1,12 @@
+allow rild gpsd:dir search;
+allow rild gpsd:file { open read };
+allow rild radio_data_file:file { open read };
+allow rild audioserver:dir search;
+allow rild audioserver:file { open read };
+allow rild gpsd:file getattr;
+allow rild imei_efs_file:dir search;
+allow rild imei_efs_file:file { open read };
+allow rild audioserver:file getattr;
+allow rild sysfs:file write;
+allow rild proc_qtaguid_stat:file { open read };
+allow rild radio_data_file:dir { add_name write };

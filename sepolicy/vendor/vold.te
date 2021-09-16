@@ -1,0 +1,1 @@
+# allow vold debugfs:file { open write };

@@ -38,3 +38,6 @@ allow gpsd system_data_file:dir { add_name write };
 allow gpsd system_data_file:fifo_file create;
 allow gpsd gps_data_file:fifo_file { getattr unlink };
 allow gpsd system_data_file:dir remove_name;
+allow gpsd system_data_file:file read;
+# allow gpsd system_data_file:file { write };
+allow gpsd system_data_file:file { getattr };
