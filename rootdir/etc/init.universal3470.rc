@@ -521,7 +521,7 @@ service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF0000000000000
 service gpsd /system/vendor/bin/gpsd -c /system/etc/gps.xml
     class main
     user gps
-   group system wakelock inet net_raw
+    group system inet net_raw
     ioprio be 0
     seclabel u:r:gpsd:s0
 
