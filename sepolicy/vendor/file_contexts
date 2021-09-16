@@ -110,6 +110,7 @@ vendor/firwmare/mfc_fw.bin				 u:object_r:firmware_mfc:s0
 
 # GPS
 /dev/ttySAC1                                                     u:object_r:gps_device:s0
+/data/system/gps/\.gpsd.lock                                     u:object_r:gps_data_file:s0
 
 # Bluetooth
 /dev/ttySAC0                                                     u:object_r:hci_attach_dev:s0
