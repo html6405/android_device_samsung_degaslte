@@ -1,2 +1,5 @@
 allow ueventd firmware_exynos:dir search;
 allow ueventd firmware_exynos:file { read getattr open };
+allow ueventd camera_device:file { relabelto getattr open write };
+allow ueventd camera_device:dir { relabelto getattr add_name write };
+allow ueventd camera_device:lnk_file { relabelto getattr open write };
