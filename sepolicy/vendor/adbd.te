@@ -1,2 +1,4 @@
 allow adbd sysfs_cpuinfo:dir search;
 allow adbd sysfs_cpuinfo:file { open read };
+allow adbd debugfs:file { open };
+allow adbd debugfs:file { write };
